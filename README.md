@@ -93,7 +93,7 @@ export class ProductAlertsComponent {
     </a>
 </div>
 ```
-#### product-list.component.html
+#### app.module.ts
 
 ```
 import { NgModule } from '@angular/core';
