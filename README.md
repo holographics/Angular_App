@@ -127,7 +127,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 })
 export class AppModule { }
 ```
-
+#### product-details.component.ts
 ```
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -154,4 +154,15 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 }
+```
+#### product-details.component.html
+```
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+
+</div>
 ```
