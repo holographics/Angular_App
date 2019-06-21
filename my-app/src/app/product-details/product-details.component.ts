@@ -9,8 +9,6 @@ import { products } from '../products';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-
-
 export class ProductDetailsComponent implements OnInit {
   product;
 
@@ -21,9 +19,14 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
+      console.log('....');
+      console.log(params);
+      console.log('....' + params);
+      console.log(products);
+      console.log('>>>', typeof(products));
+      console.log(products[0]);
+      console.log(products[1]);
       this.product = products[+params.get('productId')];
     });
   }
-
-
 }
