@@ -2,22 +2,12 @@
 
 <ul class="heroes">
   <li *ngFor="let item of items"
-    [class.selected]="item === selectedHero"
+    [class.selected]="item === selected_item"
     (click)="onSelect(item)">
     <span class="badge">{{item.id}}</span> {{item.name}} : {{item.uuid}}
   </li>
 </ul>
 
+<app-comp2 [item]="selected_item"></app-comp2>
 
-<div *ngIf="selected_item">
- 
-  <h2>{{selected_item.name | uppercase}} Details</h2>
-  <div><span>Item ID: </span>{{selected_item.id}}</div>
-  <div><span>Item UUID: </span>{{selected_item.uuid}}</div>
-  <div>
-    <label>Item name:
-      <input [(ngModel)]="selected_item.name" placeholder="name"/>
-    </label>
-  </div>
- 
-</div>
+
